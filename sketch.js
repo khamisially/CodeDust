@@ -1,15 +1,33 @@
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(600, 600);
 }
 
 function draw() {
-  background(255,255,100,2);
-  stroke(255);
-  strokeWeight(30);
-  noFill();
+  background(220,100,200);
   
-  if (mouseX > 300) {
-    fill(255,0,200);
+}
+let x = 320;
+let y = 180;
+let xspeed = 15;
+let yspeed = 23;
+
+let r = 25;
+
+function setup() {
+  createCanvas(640, 640);
+}
+
+function draw() {
+  background(200,400,100,500);
+  ellipse(x, y, r*2, r*2);
+  x += xspeed;
+  y += yspeed;
+  if (x > width - r || x < r) {
+    xspeed = -xspeed;
   }
-  ellipse(300,200,100,100);
+  if (y > height - r || y < r) {
+    yspeed = -yspeed;
+  }
+
+
 }
